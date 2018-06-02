@@ -1,0 +1,11 @@
+language: java
+jdk: openjdk10
+before_script:
+- git pull --recurse-submodules
+- wget https://www.apache.org/dist/ant/binaries/apache-ant-1.10.3-bin.tar.gz
+- tar -xzvf apache-ant-1.10.3-bin.tar.gz
+- export PATH=`pwd`/apache-ant-1.10.3/bin:$PATH
+- cd lombok
+script:
+- ant dist
+- "mvn -s ../settings.xml -DrepositoryId=bintray -Durl=https://api.bintray.com/maven/iherasymenko/lombok/lombok-snapshots/\\;publish=1 -Dfile=dist/lombok.jar -DartifactId=lombok -DgroupId=org.projectlombok -Dversion=$TRAVIS_BUILD_NUMBER-`git rev-parse --short HEAD` deploy:deploy-file"

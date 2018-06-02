@@ -1,2 +1,2 @@
 # lombok-publisher
-lombok daily snapshots builds for everyone
+lombok daily snapshot builds for everyone
