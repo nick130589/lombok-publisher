@@ -2,9 +2,9 @@ language: java
 jdk: openjdk10
 before_script:
 - git submodule foreach git pull origin master
-- wget https://www.apache.org/dist/ant/binaries/apache-ant-1.10.3-bin.tar.gz
-- tar -xzvf apache-ant-1.10.3-bin.tar.gz
-- export PATH=`pwd`/apache-ant-1.10.3/bin:$PATH
+- wget https://www.apache.org/dist/ant/binaries/apache-ant-1.10.4-bin.tar.gz
+- tar -xzvf apache-ant-1.10.4-bin.tar.gz
+- export PATH=`pwd`/apache-ant-1.10.4/bin:$PATH
 - cd lombok
 script:
 - ant dist
