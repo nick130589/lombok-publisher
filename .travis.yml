@@ -7,5 +7,6 @@ before_script:
 - export PATH=`pwd`/apache-ant-1.10.5/bin:$PATH
 - cd lombok
 script:
+- "sed -i 's/repo1.maven.org/repo.maven.apache.org/g' buildScripts/ivysettings.xml"
 - ant dist
 - "mvn -s ../settings.xml -DrepositoryId=bintray -Durl=https://api.bintray.com/maven/iherasymenko/lombok/lombok-snapshots/\\;publish=1 -Dfile=dist/lombok.jar -DartifactId=lombok -DgroupId=org.projectlombok -Dversion=$TRAVIS_BUILD_NUMBER-`git rev-parse --short HEAD` deploy:deploy-file"

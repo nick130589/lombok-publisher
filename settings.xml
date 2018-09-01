@@ -11,4 +11,13 @@
     </server>
   </servers>
   
+  <mirrors>
+    <mirror>
+      <id>US</id>
+      <name>US</name>
+      <url>https://repo.maven.apache.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+  
 </settings>
